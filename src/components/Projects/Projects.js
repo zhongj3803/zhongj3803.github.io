@@ -39,8 +39,8 @@ function Projects() {
               title="DALL-E Clone"
               description="Clone of the well-known AI image generator DALL-E, with functions for creating images as well as adding
               them to a gallery!"
-              ghLink="https://github.com/zhongj3803/Spotify-Stats"
-              demoLink="https://main.d3alb154qr6hrl.amplifyapp.com/"
+              ghLink="https://github.com/zhongj3803/DALL-E-clone"
+              // demoLink="https://main.d3alb154qr6hrl.amplifyapp.com/"
             />
           </Col>
           {/* <Col md={4} className="project-card">
