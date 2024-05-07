@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.740bbc4e.css",
-    "main.js": "/static/js/main.be151482.js",
+    "main.js": "/static/js/main.c97f662c.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/dalle-clone.png": "/static/media/dalle-clone.14e36d9687753fd6acd3.png",
@@ -14,12 +14,12 @@
     "index.html": "/index.html",
     "static/media/Soumyajit_Behera-BIT_MESRA.pdf": "/static/media/Soumyajit_Behera-BIT_MESRA.31d6cfe0d16ae931b73c.pdf",
     "main.740bbc4e.css.map": "/static/css/main.740bbc4e.css.map",
-    "main.be151482.js.map": "/static/js/main.be151482.js.map",
+    "main.c97f662c.js.map": "/static/js/main.c97f662c.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.740bbc4e.css",
-    "static/js/main.be151482.js"
+    "static/js/main.c97f662c.js"
   ]
 }
