@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/static/css/main.740bbc4e.css",
-    "main.js": "/static/js/main.bee9fb64.js",
+    "main.js": "/static/js/main.aac73a2d.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/dalle-clone.png": "/static/media/dalle-clone.14e36d9687753fd6acd3.png",
     "static/media/spotify-stats.png": "/static/media/spotify-stats.0239fb8de93f74813b3a.png",
+    "static/media/Jesse_Zhong_Resume.pdf": "/static/media/Jesse_Zhong_Resume.f8efa0ce7abbee951ccc.pdf",
     "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
     "static/media/logo.png": "/static/media/logo.6132f38db09419c3c046.png",
     "static/media/avatar.svg": "/static/media/avatar.5852f40fbb38aa284829fa3fb7722225.svg",
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
-    "static/media/Soumyajit_Behera-BIT_MESRA.pdf": "/static/media/Soumyajit_Behera-BIT_MESRA.31d6cfe0d16ae931b73c.pdf",
     "main.740bbc4e.css.map": "/static/css/main.740bbc4e.css.map",
-    "main.bee9fb64.js.map": "/static/js/main.bee9fb64.js.map",
+    "main.aac73a2d.js.map": "/static/js/main.aac73a2d.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.740bbc4e.css",
-    "static/js/main.bee9fb64.js"
+    "static/js/main.aac73a2d.js"
   ]
 }
