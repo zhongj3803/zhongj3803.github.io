@@ -8,8 +8,8 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
-  // let date = new Date();
-  // let year = date.getFullYear();
+  let date = new Date();
+  let year = date.getFullYear();
   return (
     <Container fluid className="footer">
       <Row>
@@ -21,6 +21,9 @@ function Footer() {
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
+            <li className="social-icons" style={{ color: "white" }}>
+              Connect with me:
+            </li>
             <li className="social-icons">
               <a
                 href="https://github.com/zhongj3803"
