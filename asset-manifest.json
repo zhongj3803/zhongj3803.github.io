@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.740bbc4e.css",
-    "main.js": "/static/js/main.aac73a2d.js",
+    "main.js": "/static/js/main.c133d8ee.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/dalle-clone.png": "/static/media/dalle-clone.14e36d9687753fd6acd3.png",
@@ -14,12 +14,12 @@
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
     "main.740bbc4e.css.map": "/static/css/main.740bbc4e.css.map",
-    "main.aac73a2d.js.map": "/static/js/main.aac73a2d.js.map",
+    "main.c133d8ee.js.map": "/static/js/main.c133d8ee.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.740bbc4e.css",
-    "static/js/main.aac73a2d.js"
+    "static/js/main.c133d8ee.js"
   ]
 }
