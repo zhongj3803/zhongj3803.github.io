@@ -10,6 +10,7 @@ import {
   DiGit,
   DiJava,
   DiLinux,
+  DiRust
 } from "react-icons/di";
 import {
   SiFirebase,
@@ -21,8 +22,15 @@ import {
   SiSplunk,
   SiC,
   SiCplusplus,
+  SiTerraform,
+  SiGnubash,
+  SiVisualstudiocode,
+  SiInsomnia,
+  SiGithubpages,
+  SiVercel,
+  SiJupyter
 } from "react-icons/si";
-import { } from "react-icons/tb";
+import { TbBrandGolang } from "react-icons/tb";
 
 function Techstack() {
   return (
@@ -77,6 +85,33 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiSplunk />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiTerraform />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <TbBrandGolang />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <DiRust />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiGnubash />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiVisualstudiocode />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiInsomnia />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiGithubpages/>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiVercel/>
+      </Col>s
+      <Col xs={4} md={2} className="tech-icons">
+        <SiJupyter/>
       </Col>
     </Row>
   );

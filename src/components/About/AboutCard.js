@@ -14,7 +14,7 @@ function AboutCard() {
             do in the future, so I'm still trying to figure things out!
             <br />
             <br />
-            Here are some things I like to do outside of coding!
+            Here are some things I like to do outside of coding...
           </p>
           <ul>
             <li className="about-activity">

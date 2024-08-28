@@ -35,15 +35,15 @@ function About() {
           </Col>
         </Row>
         <h1 className="project-heading">
-          Languages and <strong className="purple">Technologies</strong>
+          Languages, <strong className="purple">Technologies, </strong> and Tools
         </h1>
 
         <Techstack />
 
-        <h1 className="project-heading">
+        {/* <h1 className="project-heading">
           <strong className="purple">Tools</strong>
         </h1>
-        <Toolstack />
+        <Toolstack /> */}
 
         {/* <Github /> */}
       </Container>
