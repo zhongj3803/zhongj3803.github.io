@@ -1,0 +1,1 @@
+To deploy, just run ```npm run deploy```
