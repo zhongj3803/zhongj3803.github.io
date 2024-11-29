@@ -1,1 +1,1 @@
-To deploy, just run ```npm run deploy```
+To deploy, just run npm run deploy
