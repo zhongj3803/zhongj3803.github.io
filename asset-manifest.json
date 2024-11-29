@@ -1,25 +1,28 @@
 {
   "files": {
     "main.css": "/static/css/main.740bbc4e.css",
-    "main.js": "/static/js/main.c133d8ee.js",
+    "main.js": "/static/js/main.dbe0a5f9.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/dalle-clone.png": "/static/media/dalle-clone.14e36d9687753fd6acd3.png",
     "static/media/spotify-stats.png": "/static/media/spotify-stats.0239fb8de93f74813b3a.png",
+    "static/media/itk.png": "/static/media/itk.838f159cfea48f0f3b8f.png",
+    "static/media/xor.png": "/static/media/xor.ee189316599aeefd5588.png",
     "static/media/Jesse_Zhong_Resume.pdf": "/static/media/Jesse_Zhong_Resume.f8efa0ce7abbee951ccc.pdf",
     "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
     "static/media/logo.png": "/static/media/logo.6132f38db09419c3c046.png",
+    "static/media/parser.png": "/static/media/parser.f6c4493740c0d5b67a57.png",
     "static/media/avatar.svg": "/static/media/avatar.5852f40fbb38aa284829fa3fb7722225.svg",
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
     "main.740bbc4e.css.map": "/static/css/main.740bbc4e.css.map",
-    "main.c133d8ee.js.map": "/static/js/main.c133d8ee.js.map",
+    "main.dbe0a5f9.js.map": "/static/js/main.dbe0a5f9.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.740bbc4e.css",
-    "static/js/main.c133d8ee.js"
+    "static/js/main.dbe0a5f9.js"
   ]
 }
