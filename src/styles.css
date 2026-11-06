@@ -1,0 +1,1105 @@
+/*
+  One loud element, the playable keyboard in the hero, then quiet sections on warm
+  white with flat pastel fields for rhythm. Baby blue and lavender lead; mint,
+  peach, and pink add variety.
+*/
+
+:root {
+  /* Palette */
+  --blue: #bbd9ff;
+  --lavender: #dcceff;
+  --mint: #c5e8dc;
+  --peach: #ffd5bc;
+  --pink: #f7cdeb;
+  --paper: #faf9f6;
+  --ink: #303344;
+
+  /* Tints of ink */
+  --ink-soft: rgba(48, 51, 68, 0.8);
+  --line: rgba(48, 51, 68, 0.14);
+  --shadow: rgba(48, 51, 68, 0.2);
+
+  /* Type */
+  --font-display: "Young Serif", Georgia, serif;
+  --font-body: "Figtree Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Space */
+  --page: 1240px;
+  --gutter: max(20px, 4vw);
+  --radius: 36px;
+  --nav-clearance: 92px;
+  --section-gap: clamp(80px, 11vw, 150px);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(2.25rem, 5.4vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--lavender);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(var(--page), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-gap) 0;
+  scroll-margin-top: calc(var(--nav-clearance) + 12px - var(--section-gap));
+}
+
+.section-head {
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 0.4s var(--ease), background-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+.button svg {
+  font-size: 1.2em;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: var(--lavender);
+}
+
+.button--ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.button--ink:hover {
+  background: var(--ink);
+  box-shadow: 0 12px 24px -10px var(--shadow);
+}
+
+.button--paper {
+  background: var(--paper);
+  box-shadow: none;
+}
+
+.button--paper:hover {
+  background: var(--paper);
+  box-shadow: 0 12px 24px -10px var(--shadow);
+}
+
+.button--small {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: 0.9375rem;
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s var(--ease) var(--delay, 0ms),
+    transform 0.9s var(--ease) var(--delay, 0ms);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Navigation ---------- */
+
+.nav {
+  position: fixed;
+  z-index: 20;
+  top: 16px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: calc(100vw - 24px);
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(250, 249, 246, 0.78);
+  box-shadow: 0 0 0 1px var(--line), 0 14px 30px -18px var(--shadow);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  backdrop-filter: blur(16px) saturate(1.3);
+  transform: translateX(-50%);
+  animation: nav-in 0.9s var(--ease) 0.1s backwards;
+}
+
+.nav__mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  transition: transform 0.4s var(--ease);
+}
+
+.nav__mark:hover {
+  transform: rotate(-8deg);
+}
+
+.nav__links {
+  position: relative;
+  display: flex;
+}
+
+.nav__link {
+  position: relative;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.nav__link:hover {
+  background: rgba(48, 51, 68, 0.06);
+}
+
+.nav__glow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--w);
+  border-radius: 999px;
+  background: var(--c);
+  transform: translateX(var(--x));
+  transition: transform 0.55s var(--ease), width 0.55s var(--ease),
+    background-color 0.55s var(--ease), opacity 0.35s var(--ease);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: clip;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(52% 62% at 90% 8%, rgba(187, 217, 255, 0.55), transparent 72%),
+    radial-gradient(46% 56% at 4% 62%, rgba(220, 206, 255, 0.5), transparent 72%);
+}
+
+.hero__body {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  width: min(var(--page), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+  padding-block: calc(var(--nav-clearance) + 8px) 28px;
+  animation: rise 1s var(--ease) backwards;
+}
+
+.hero__name {
+  font-size: clamp(4rem, min(14.6vw, 24vh), 13.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(16px, 3vh, 28px);
+}
+
+/* ---------- Piano ---------- */
+
+.piano {
+  --key-height: clamp(150px, 29vh, 300px);
+  position: relative;
+}
+
+.piano__bar {
+  --edge: max(var(--gutter), (100% - var(--page)) / 2);
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+  animation: fade 1s var(--ease) 1.5s backwards;
+}
+
+.piano__hint {
+  padding-inline: var(--edge);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+/* One scrollable row that runs off the screen edge, so adding songs never changes
+   the height of the hero. The block padding leaves room for the hover lift. */
+.songs {
+  display: flex;
+  gap: 6px;
+  margin-block: -2px;
+  padding: 2px var(--edge);
+  overflow-x: auto;
+  scroll-padding-inline: var(--edge);
+}
+
+.songs li {
+  flex: none;
+}
+
+/* A slim pill that runs between the page margins. */
+.songs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.songs::-webkit-scrollbar-track {
+  margin-inline: max(var(--gutter), (100vw - var(--page)) / 2);
+  border-radius: 999px;
+  background: rgba(48, 51, 68, 0.05);
+}
+
+.songs::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--lavender);
+}
+
+.songs::-webkit-scrollbar-thumb:hover {
+  background: rgba(48, 51, 68, 0.3);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .songs {
+    scrollbar-width: thin;
+    scrollbar-color: var(--lavender) transparent;
+  }
+}
+
+@media (hover: hover) {
+  .songs {
+    padding-bottom: 10px;
+  }
+}
+
+.song {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 38px;
+  padding: 0 15px 0 12px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  background: var(--c);
+  font-size: 0.9375rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease);
+}
+
+.song:hover {
+  transform: translateY(-2px);
+}
+
+/* Fills across the pill as the song plays. */
+.song::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(48, 51, 68, 0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.song.is-playing::before {
+  animation: song-progress var(--length) linear forwards;
+}
+
+.song > * {
+  position: relative;
+}
+
+.song__title {
+  font-weight: 600;
+}
+
+.song__artist {
+  color: var(--ink-soft);
+}
+
+.piano__hint-touch {
+  display: none;
+}
+
+.piano__keys {
+  display: flex;
+  gap: 3px;
+  height: var(--key-height);
+  padding-inline: 3px;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.piano__slot {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  animation: key-rise 0.8s var(--ease) backwards;
+  animation-delay: calc(240ms + var(--n) * 26ms);
+}
+
+.key {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+}
+
+.key--white {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0 14px 14px;
+  background: var(--c);
+  box-shadow: inset 0 -12px 0 rgba(48, 51, 68, 0.05), inset 0 16px 14px -14px var(--shadow);
+  transition: transform 0.32s var(--ease), box-shadow 0.32s var(--ease);
+}
+
+.key--white:hover {
+  box-shadow: inset 0 -12px 0 rgba(48, 51, 68, 0.09), inset 0 16px 14px -14px var(--shadow);
+}
+
+.key--white.is-down {
+  box-shadow: inset 0 -5px 0 rgba(48, 51, 68, 0.1), inset 0 22px 16px -14px var(--shadow);
+  transform: translateY(6px);
+  transition-duration: 0.05s;
+}
+
+.key--black {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: 56%;
+  height: 60%;
+  border-radius: 0 0 9px 9px;
+  background: var(--ink);
+  box-shadow: inset 0 -7px 0 rgba(250, 249, 246, 0.1);
+  transform: translateX(calc(50% + 1.5px));
+  transition: transform 0.32s var(--ease), box-shadow 0.32s var(--ease);
+}
+
+.key--black.is-down {
+  box-shadow: inset 0 -3px 0 rgba(250, 249, 246, 0.14);
+  transform: translateX(calc(50% + 1.5px)) translateY(4px);
+  transition-duration: 0.05s;
+}
+
+.piano__notes {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.note {
+  position: absolute;
+  bottom: calc(var(--key-height) + 6px);
+  width: 40px;
+  height: 29px;
+  margin-left: -20px;
+  border-radius: 50%;
+  background: var(--c);
+  transform: rotate(-20deg);
+  animation: note-float 2.6s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+}
+
+/* The stem turns the note head into a quarter note. */
+.note::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  width: 5px;
+  height: 66px;
+  border-radius: 3px;
+  background: var(--c);
+  transform: rotate(20deg);
+  transform-origin: bottom right;
+}
+
+/* ---------- About ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: 32px clamp(32px, 7vw, 104px);
+  align-items: start;
+}
+
+.about__copy {
+  display: grid;
+  gap: 1em;
+  font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
+  line-height: 1.5;
+}
+
+.about__school {
+  padding-top: 8px;
+  border-top: 1.5px solid var(--ink);
+}
+
+.about__school h3 {
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.about__school li {
+  padding-block: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+
+.about__hobbies-intro {
+  margin-top: clamp(40px, 6vw, 72px);
+  margin-bottom: 18px;
+  font-size: 1.1875rem;
+}
+
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.hobby {
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  padding: 20px 24px 30px;
+  border-radius: 0 0 20px 20px;
+  background: var(--c);
+  box-shadow: inset 0 -12px 0 rgba(48, 51, 68, 0.05), inset 0 16px 14px -14px var(--shadow);
+}
+
+.hobby__icon {
+  margin-bottom: auto;
+  font-size: 2.25rem;
+}
+
+.hobby h3 {
+  margin-top: 24px;
+  font-size: 1.625rem;
+  line-height: 1.2;
+}
+
+/* ---------- Projects ---------- */
+
+.stack {
+  display: block;
+}
+
+.project {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--c);
+  box-shadow: 0 -14px 40px -22px var(--shadow);
+}
+
+.project + .project {
+  margin-top: 22px;
+}
+
+.project__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+  padding: clamp(28px, 3.6vw, 48px);
+}
+
+.project h3 {
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.project__description {
+  margin-top: 12px;
+  color: var(--ink-soft);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.tags li {
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(250, 249, 246, 0.6);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.project__visual {
+  position: relative;
+  min-width: 0;
+  min-height: 280px;
+}
+
+.project__visual img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.project__visual--window img {
+  top: clamp(28px, 3.6vw, 48px);
+  left: 0;
+  width: calc(100% + 40px);
+  object-fit: cover;
+  object-position: top left;
+  border-radius: 16px 0 0 0;
+  box-shadow: 0 24px 50px -22px var(--shadow);
+  transition: transform 0.7s var(--ease);
+}
+
+.project:hover .project__visual--window img {
+  transform: translateY(-6px);
+}
+
+.project__visual--free img {
+  inset: 0;
+  padding: clamp(20px, 3vw, 40px);
+  object-fit: contain;
+}
+
+/* ---------- Experience ---------- */
+
+.jobs {
+  border-bottom: 1px solid var(--line);
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 11.5rem minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 4px 32px;
+  align-items: baseline;
+  padding-block: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.job__dates {
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+}
+
+.job__who {
+  display: flex;
+  gap: 14px;
+}
+
+/* Lines the row up on the company name rather than the bottom of the logo. */
+.job__title {
+  align-self: baseline;
+  min-width: 0;
+}
+
+/* A small piano key, like the hobby tiles. */
+.job__logo {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  padding-bottom: 3px;
+  border-radius: 7px 7px 15px 15px;
+  background: var(--c);
+  box-shadow: inset 0 -4px 0 rgba(48, 51, 68, 0.06);
+}
+
+/* Wider than it is tall, so wordmarks get extra room while square marks don't change. */
+.job__logo img {
+  width: 78%;
+  height: 62%;
+  object-fit: contain;
+}
+
+.job h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.job__role {
+  color: var(--ink-soft);
+}
+
+.job__note {
+  color: var(--ink-soft);
+}
+
+.skills {
+  margin-top: clamp(56px, 8vw, 104px);
+  padding: clamp(28px, 5vw, 64px);
+  border-radius: var(--radius);
+  background: var(--mint);
+}
+
+.skills h2 {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+}
+
+.skills__groups {
+  display: grid;
+  gap: 24px;
+}
+
+.skills__group {
+  display: grid;
+  grid-template-columns: 11.5rem minmax(0, 1fr);
+  gap: 10px 32px;
+  align-items: start;
+}
+
+.skills__group h3 {
+  padding-top: 5px;
+  font-size: 1.1875rem;
+  line-height: 1.3;
+}
+
+.skills__group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(250, 249, 246, 0.72);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.chip svg {
+  font-size: 1.15em;
+}
+
+/* ---------- Contact ---------- */
+
+.closing {
+  padding-block: clamp(56px, 8vw, 104px) 0;
+}
+
+.contact {
+  scroll-margin-top: var(--nav-clearance);
+  display: grid;
+  gap: 32px;
+  padding: clamp(36px, 7vw, 96px) clamp(28px, 6vw, 80px);
+  border-radius: var(--radius);
+  background: var(--blue);
+}
+
+.contact h2 {
+  max-width: 13em;
+  font-size: clamp(2.5rem, 6.4vw, 5.25rem);
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.credit {
+  padding-block: 24px 28px;
+  font-size: 0.875rem;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+/* ---------- Page-load sequence ---------- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -14px);
+  }
+}
+
+@keyframes note-float {
+  0% {
+    opacity: 0;
+    transform: translate(0, 34px) rotate(-20deg) scale(0.7);
+  }
+  10% {
+    opacity: 1;
+  }
+  62% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift), -250px) rotate(-20deg) scale(1);
+  }
+}
+
+@keyframes song-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes key-rise {
+  from {
+    transform: translateY(102%);
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+/* Projects stack like sheets of music, on screens with the room for it. */
+@media (min-width: 900px) and (min-height: 640px) {
+  .project {
+    position: sticky;
+    top: calc(var(--nav-clearance) - 12px + var(--i) * 14px);
+    height: min(540px, 100vh - var(--nav-clearance) - 100px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .piano__slot[data-tier="wide"] {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .project {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project__visual {
+    aspect-ratio: 5 / 4;
+  }
+
+  .project__visual--window img {
+    top: 0;
+    left: clamp(28px, 3.6vw, 48px);
+    height: calc(100% + 8px);
+  }
+
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hobbies {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hobby {
+    min-height: 150px;
+  }
+
+  .job {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .job__note {
+    margin-top: 6px;
+  }
+
+  .skills__group {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --radius: 28px;
+  }
+
+  .hero__body {
+    padding-block: 84px 14px;
+  }
+
+  .hero__name {
+    font-size: min(27vw, 14vh);
+    line-height: 0.94;
+    white-space: normal;
+  }
+
+  .hero__name span {
+    display: block;
+  }
+
+  .hero__actions {
+    margin-top: 14px;
+  }
+
+  .hero__actions .button {
+    min-height: 48px;
+  }
+
+  .contact h2 {
+    text-wrap: wrap;
+  }
+
+  .piano {
+    --key-height: clamp(130px, 24vh, 300px);
+  }
+
+  .piano__bar {
+    margin-bottom: 8px;
+  }
+
+  .piano__hint {
+    font-size: 0.8125rem;
+  }
+
+  .song__artist {
+    display: none;
+  }
+
+  .piano__slot[data-tier="medium"] {
+    display: none;
+  }
+
+  .key--white {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav__link {
+    padding-inline: 11px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 379px) {
+  .nav__mark {
+    display: none;
+  }
+
+  .nav__link {
+    padding-inline: 10px;
+  }
+
+  .hero__actions .button {
+    padding-inline: 18px;
+  }
+
+  .song {
+    padding: 0 12px 0 10px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .piano__hint {
+    display: none;
+  }
+}
+
+@media (max-height: 640px) and (max-width: 639px) {
+  .piano__hint {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) and (max-width: 639px) {
+  .piano {
+    --key-height: 104px;
+  }
+}
+
+@media (hover: none) {
+  .songs {
+    scrollbar-width: none;
+  }
+
+  .songs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .piano__hint-mouse {
+    display: none;
+  }
+
+  .piano__hint-touch {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .piano__notes {
+    display: none;
+  }
+}
+
+@media print {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .nav,
+  .piano {
+    display: none;
+  }
+}
