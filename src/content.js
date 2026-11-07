@@ -181,12 +181,13 @@ export const navigation = [
 export const about = {
   title: "A bit about me",
   paragraphs: [
-    "Hey, I'm Jesse! I'm on the Model Data Access team at Two Sigma. I studied computer science and math at Vanderbilt, and took quite a few CS courses along the way, including machine learning, operating systems, cryptography, compilers, and search engines.",
-    "I've also interned at Coinbase and Splunk, done some self-studying, and built a few fun projects. To be honest, I really don't know what I want to do in the future, so I'm still trying to figure things out!",
+    "Hey, I'm Jesse! I was born and raised in San Diego and went to Vanderbilt for college, where I studied Computer Science and Mathematics.",
+    "My first ever internship was with a small ed-tech startup called Brain Racers. This paved the path for my next internships at Splunk and Coinbase.",
+    "Now a fresh graduate, I've joined Two Sigma on the Model Data Access team, where I work on the data delivery infrastructure for the firm's quantitative models.",
   ],
   education: {
     school: "Vanderbilt University",
-    studies: ["BS/MS Computer Science", "Minor in Mathematics"],
+    studies: ["BS + MS in Computer Science", "Minor in Mathematics"],
   },
   hobbiesIntro: "Here are some things I like to do outside of coding...",
   hobbies: [
